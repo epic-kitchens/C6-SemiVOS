@@ -18,6 +18,8 @@ Once the dataset is converted to DAVIS-like format, the dataset structure would 
 ```
 
 |- VISOR_2022
+  |- val_data_mapping.json
+  |- train_data_mapping.json
   |- JPEGImages
   |- Annotations
   |- ImageSets
@@ -44,7 +46,7 @@ If you want to participate and evaluate on our [Codalab](https://codalab.lisn.up
       |- PXX_(X)XX_frame_xxxxxxxxxx.png
 ```
 
-`mapping_file`: the mapping file of your data, this would be saved when you did [VISOR to DAVIS-like](https://github.com/epic-kitchens/VISOR-VOS#visor-to-davis-like-format) step. by default it's `../VISOR_2022/val_data_mapping.json`<br>
+`mapping_file`: the mapping file of your data, this would be saved when you did [VISOR to DAVIS-like](https://github.com/epic-kitchens/C6-SemiVOS#visor-to-davis-like-format) step. by default it's `../VISOR_2022/val_data_mapping.json`<br>
 `out_json_name`: the file name of the output JSON. by default it's `val.json`<br>
 
 Once the `val.json`, you can compress it by 'zip -j val.zip val.json'.
