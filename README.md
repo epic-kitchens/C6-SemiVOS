@@ -49,7 +49,7 @@ If you want to participate and evaluate on our [Codalab](https://codalab.lisn.up
 `mapping_file`: the mapping file of your data, this would be saved when you did [VISOR to DAVIS-like](https://github.com/epic-kitchens/C6-SemiVOS#visor-to-davis-like-format) step. by default it's `../VISOR_2022/val_data_mapping.json`<br>
 `out_json_name`: the file name of the output JSON. by default it's `val.json`<br>
 
-Once the `val.json`, you can compress it by 'zip -j val.zip val.json'.
+Once the `val.json`, you can compress it by running `zip -j val.zip val.json` command.
 
 ## Acknowledgement
 
