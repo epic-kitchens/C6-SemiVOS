@@ -9,11 +9,11 @@ To participate and submit to this VISOR Semi-Supervised VOS challenge, register 
 ## Data Download
 Please Go to the download section of [EPIC-KITCHENS VISOR](https://epic-kitchens.github.io/VISOR/) official webpage to download the whole dataset, providing RGB frames for train/val/test and masks for train/val splits. If you are interested in our data generation pipeline, please also check our [VISOR paper](https://arxiv.org/abs/2209.13064). 
 
-#### VISOR to DAVIS-like format
+### VISOR to DAVIS-like format
 Since most methods follow [DAVIS](https://davischallenge.org/) format, we provide a script to convert our dataset to DAVIS style easily. Please refer to [VISOR to DAVIS-like](https://github.com/epic-kitchens/VISOR-VOS#visor-to-davis-like-format) for the needed steps and the conversion script.
 
 
-#### Dataset Structure
+### Dataset Structure
 Once the dataset is converted to DAVIS-like format, the dataset structure would be as follows:
 ```
 
