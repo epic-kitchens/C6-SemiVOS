@@ -33,7 +33,7 @@ Where `val.txt` contains the set of seqeunces that belongs to the validation spl
 ## Baseline and Evaluation
 We use the official [DAVIS evaluation code](https://github.com/davisvideochallenge/davis2017-evaluation) in our benchmark, we adjusted the code to include the last frame of each sequence as part of the final score.
 
-Moreover, we used [STM](https://github.com/seoungwugoh/STM) as a baseline for this challange, please refer to [STM inference and evaluation](https://github.com/epic-kitchens/VISOR-VOS#evaluation) for the details on how to evaluate on the baseline with the provided weights.
+Moreover, we used [STM](https://github.com/seoungwugoh/STM) as a baseline for this challange, please refer to [STM inference and evaluation](https://github.com/epic-kitchens/VISOR-VOS#evaluation) for the details on how to evaluate on the baseline with the provided [pre-trained weights](https://github.com/epic-kitchens/VISOR-VOS#download-pre-trained-models).
 
 ## Codalab Evaluation
 If you want to participate and evaluate on our [Codalab](https://codalab.lisn.upsaclay.fr/competitions/9767). Then you can use `pngs_to_visor.py` script that would convert the PNGs prediction into VISOR-like JSON file, the script takes these arguments:
