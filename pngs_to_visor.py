@@ -89,7 +89,7 @@ def pngs_to_visor(masks_path, mapping_file,out_json_name):
     :param mapping_file: a dict of the mappings of the objects
     """ 
     #get all sequences
-    sequences = glob.glob(os.path.join(masks_path,"*"))
+    sequences = sorted(glob.glob(os.path.join(masks_path,"*")))
     #read the mappings
     json_file_handler = open(mapping_file)
     json_data_mapping = json.load(json_file_handler)
@@ -104,7 +104,7 @@ def pngs_to_visor(masks_path, mapping_file,out_json_name):
             #get plygon and VISOR-like data for the sequence
             sequence_polygons, sequence_frame_count, sequence_masks_count = sequence_of_pngs_to_visor(sequence,json_data_mapping[os.path.basename(sequence)])
             #add it into the list of data
-            all_json_data['video_annotations'].append(sequence_polygons[0])
+            all_json_data['video_annotations'].extend(sequence_polygons)
             #update frame and mask counts
             data_frame_count += sequence_frame_count
             data_mask_count += sequence_masks_count
@@ -120,9 +120,9 @@ def pngs_to_visor(masks_path, mapping_file,out_json_name):
 if __name__ == "__main__":
     def get_arguments():
         parser = argparse.ArgumentParser(description="parameters for VISOR to DAVIS conversion")
-        parser.add_argument("-masks_path", type=str, help="path to where the PNGs(predictions) are stored", default='../predictions')
-        parser.add_argument("-mapping_file", type=str, help="path where the mapping file of your data, this would be saved when you run visor_to_davis.py script", default='../VISOR_2022/val_data_mapping.json')
-        parser.add_argument("-out_json_name", type=str, help="the file name of the output JSON",default='val.json')
+        parser.add_argument("--masks_path", type=str, help="path to where the PNGs(predictions) are stored", default='../predictions')
+        parser.add_argument("--mapping_file", type=str, help="path where the mapping file of your data, this would be saved when you run visor_to_davis.py script", default='../VISOR_2022/val_data_mapping.json')
+        parser.add_argument("--out_json_name", type=str, help="the file name of the output JSON",default='val.json')
         return parser.parse_args()
     args = get_arguments()
     masks_path = args.masks_path
