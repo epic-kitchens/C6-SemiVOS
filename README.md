@@ -102,6 +102,7 @@ By following these instructions, you can build and run the VISOR VOS Docker imag
       ```
    Where **test.txt** contains the sequences for the test set
      - **IMPORTANT NOTE**: Don't include any evaluation scripts in the inference code, keep as lightweight as generating output PNGs based on your latest model weights.
+     - We do the inference and the evaluation on **480p resolution**. And we only use the sparse frames provided in the test set.
 3. Build the Docker image:
    - Open a terminal or command prompt.
    - Change your current directory to the provided Docker directory
